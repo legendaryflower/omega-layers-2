@@ -9,50 +9,50 @@ class ReStackLayer
             prestigeGains: new RestackLayerUpgrade("All Prestige gains are higher",
                 level => this.getPermUpgradeCost(),
                 level => Decimal.pow(128, level), {
-                    maxLevel: 8
+                    maxLevel: 99999999999999999999999999999999999999999999999999999
                 }),
             layerExponentialBoostFactorTime: new RestackLayerUpgrade("The Layer Exponential Factor increases over time",
                 level => this.getPermUpgradeCost(),
                 level => Math.min(1, this.timeSpent / 28800) * 3 * level.toNumber(), {
-                    maxLevel: 8,
+                    maxLevel: 99999999999999999999999999999999999999999999999999999,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(4, "+")
                 }),
             upgradeEffects: new RestackLayerUpgrade("All Upgrade Effects are stronger (including Tree Upgrades)",
                 level => this.getPermUpgradeCost(),
                 level => new Decimal(1).add(level.mul(2)), {
-                    maxLevel: 8,
+                    maxLevel: 99999999999999999999999999999999999999999999999999999,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                 }),
             powerGenerators: new RestackLayerUpgrade("All Power Generators are stronger",
                 level => this.getPermUpgradeCost(),
                 level => new Decimal(1).add(level.mul(0.15)), {
-                    maxLevel: 8,
+                    maxLevel: 99999999999999999999999999999999999999999999999999999,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                 }),
             aleph: new RestackLayerUpgrade("\"Increase your Aleph gain\" Upgrade scales better",
                 level => this.getPermUpgradeCost(),
                 level => 0.005 * level.toNumber(), {
-                    maxLevel: 8,
+                    maxLevel: 99999999999999999999999999999999999999999999999999999,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(3, "+")
                 }),
             layerExponentialBoostFactor: new RestackLayerUpgrade("The Layer Exponential Factor is higher",
                 level => this.getPermUpgradeCost(),
                 level => level.toNumber(), {
-                    maxLevel: 8,
+                    maxLevel: 99999999999999999999999999999999999999999999999999999,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "+")
                 })
         };
         this.metaUpgrade = new RestackLayerUpgrade("All your Layer Resources are multiplied each second",
             level => new Decimal(1e10),
             level => 1 + 0.2 * level.toNumber(),{
-                maxLevel: 8
+                maxLevel: 99999999999999999999999999999999999999999999999999999
             });
         this.upgradeTree = [
             [
                 new RestackLayerUpgrade("Increase the Resource Multiplier",
                     level => new Decimal(1e24),
                     level => Decimal.pow(2, level),{
-                        maxLevel: 4,
+                        maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(0, "^")
                     })
             ],
@@ -60,13 +60,13 @@ class ReStackLayer
                 new RestackLayerUpgrade("Resource Multipliers are stronger",
                     level => new Decimal(1e50),
                     level => Decimal.pow(4, level),{
-                        maxLevel: 4,
+                        maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
                 new RestackLayerUpgrade("Resource Multiplier Upgrades are stronger based on time spent this ReStack",
                 level => new Decimal(1e50),
                 level => new Decimal(1).add(Decimal.pow(2, level).sub(1).mul(this.timeSpent / 1000)),{
-                        maxLevel: 4,
+                        maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     })
             ],
@@ -85,13 +85,13 @@ class ReStackLayer
                 new RestackLayerUpgrade("Resource Powerers are stronger",
                     level => new Decimal("1e2000"),
                     level => new Decimal(1).add(level.mul(0.1)), {
-                        maxLevel: 4,
+                        maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
                 new RestackLayerUpgrade("Resource Multipliers are stronger",
                     level => new Decimal("1e1500"),
                     level => new Decimal(1).add(level.mul(3)), {
-                        maxLevel: 4,
+                        maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     })
             ],
@@ -110,12 +110,12 @@ class ReStackLayer
                 new RestackLayerUpgrade("Resource Powerers are stronger",
                     level => new Decimal("1ee10"),
                     level => new Decimal(1).add(level), {
-                        maxLevel: 4
+                        maxLevel: 99999999999999999999999999999999999999999999999999999
                     }),
                 new RestackLayerUpgrade("Resource Multipliers scale better to their level",
                     level => new Decimal("1ee10"),
                     level => new Decimal(1).add(level.mul(0.15)), {
-                        maxLevel: 4,
+                        maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
             ]
