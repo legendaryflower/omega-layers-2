@@ -17,7 +17,7 @@ class AlephLayer
             deltaBoost: new AlephUpgrade("Gain more δ",
                 level => Decimal.pow(1e5, level).mul(1e3),
                 level => Decimal.pow(10, level), {
-                    maxLevel: 4
+                    maxLevel: 16
                 }),
             powerGenerators: new AlephUpgrade("All Power Generators on every Layer are stronger",
                 level => Utils.createValueDilation(Decimal.pow(1e5, Decimal.pow(level, 1.5)).mul(1e20), 0.001),
@@ -25,7 +25,7 @@ class AlephLayer
             prestigeNoPowerBoost: new AlephUpgrade("Increase Prestige Reward on all Layers that don't have Power Generators",
                 level => Decimal.pow(1e8, level).mul(1e22),
                 level => Decimal.pow(2, level), {
-                    maxLevel: 3
+                    maxLevel: 6
                 }),
             alephBoost2: new AlephUpgrade("Gain more Aleph based on the log(log(α)) you have",
                 level => Utils.createValueDilation(Decimal.pow(1e30, level).mul(1e100), 0.01),
@@ -33,7 +33,7 @@ class AlephLayer
             betterBetaFormula: new AlephUpgrade("The β Prestige Formula is better",
                 level => new Decimal(1e90),
                 level => new Decimal(1).add(level.mul(0.12)), {
-                    maxLevel: 1,
+                    maxLevel: 2,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                 }),
             prestigeRewards: new AlephUpgrade("Increase the Prestige Reward of all Layers",
@@ -41,8 +41,8 @@ class AlephLayer
                 level => Decimal.pow(1.6, level)),
             layerExponentialBoost: new AlephUpgrade("Increase the exponential difference of boosts between layers, resulting in a large boost!",
                 level => level.lt(2) ? new Decimal([1e125, 1e210][level.toNumber()]) : Decimal.dInf,
-                level => [22, 25, 27][level.toNumber()], {
-                    maxLevel: 2,
+                level => [22, 25, 27,29,31][level.toNumber()], {
+                    maxLevel: 4,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "")
                 })
         };
