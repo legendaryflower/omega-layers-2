@@ -51,7 +51,7 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("Increase the Resource Multiplier",
                     level => new Decimal(1e24),
-                    level => Decimal.pow(1e108, level),{
+                    level => Decimal.pow(1e198, level),{
                         maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(0, "^")
                     })
@@ -59,7 +59,7 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("Resource Multipliers are stronger",
                     level => new Decimal(1e50),
-                    level => Decimal.pow(1e30, level),{
+                    level => Decimal.pow(1e90, level),{
                         maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
@@ -84,13 +84,13 @@ class ReStackLayer
             [
                 new RestackLayerUpgrade("Resource Powerers are stronger",
                     level => new Decimal("1e2000"),
-                    level => new Decimal(1).add(level.mul(1e35)), {
+                    level => new Decimal(1).add(level.mul(1e75)), {
                         maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
                 new RestackLayerUpgrade("Resource Multipliers are stronger",
                     level => new Decimal("1e1500"),
-                    level => new Decimal(1).add(level.mul(1e25)), {
+                    level => new Decimal(1).add(level.mul(1e99)), {
                         maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     })
@@ -114,7 +114,7 @@ class ReStackLayer
                     }),
                 new RestackLayerUpgrade("Resource Multipliers scale better to their level",
                     level => new Decimal("1ee10"),
-                    level => new Decimal(1).add(level.mul(1e150)), {
+                    level => new Decimal(1).add(level.mul(1e256)), {
                         maxLevel: 99999999999999999999999999999999999999999999999999999,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
                     }),
