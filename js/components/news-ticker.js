@@ -30,6 +30,9 @@ Vue.component("news-ticker", {
                 "Nerf This!",
                 "To nerf, or not to nerf. That is the Question!",
                 "A news ticker. How original.",
+                    "Install Microsoft Secutiry Baltimores here.",
+                    "Don't trust NavaShield, it's a fake rogue",
+                    "I already reached \"∑ layer\", I didn't reach Body-Infinity lol",
                 () =>
                 {
                     let res = "";
