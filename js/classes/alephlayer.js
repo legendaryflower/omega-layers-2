@@ -45,10 +45,7 @@ class AlephLayer
                     maxLevel: "1ee308",
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "")
             }),
-                alephBoost3: new AlephUpgrade("Gain more Aleph based on the log(log(β)) you have",
-                level => Utils.createValueDilation(Decimal.pow(1e30, level).mul(1e200), 0.01),
-                level => game.layers[0] ? Decimal.pow(new Decimal(1.1).add(level.mul(0.1)), Decimal.max(0, game.layers[1].resource).add(1).log10().add(1).log10()) : new Decimal(1)),
-                })
+             
         };
     }
 
