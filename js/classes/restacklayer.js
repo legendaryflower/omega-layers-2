@@ -40,7 +40,13 @@ class ReStackLayer
                 level => level.toNumber(), {
                     maxLevel: 99999999999999999999999999999999999999999999999999999,
                     getEffectDisplay: effectDisplayTemplates.numberStandard(0, "+")
-                })
+                }),
+             upgradeEffectsTime: new RestackLayerUpgrade("All Upgrade Effects boosters increase over time",
+                level => this.getPermUpgradeCost(),
+                level => Math.min(1, this.timeSpent / 28800) * 3 * Decimal(1).add(level.mul(2)), {
+                    maxLevel: 99999999999999999999999999999999999999999999999999999,
+                    getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
+                }),
         };
         this.metaUpgrade = new RestackLayerUpgrade("All your Layer Resources are multiplied each second",
             level => new Decimal(1e10),
