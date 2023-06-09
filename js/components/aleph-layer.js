@@ -49,7 +49,7 @@ Vue.component("aleph-layer", {
     <aleph-upgrade :upgrade="aleph.upgrades.alephBoost2"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.prestigeRewards"></aleph-upgrade>
     <aleph-upgrade :upgrade="aleph.upgrades.layerExponentialBoost"></aleph-upgrade>
-     <aleph-upgrade :upgrade="aleph.upgrades.alphaBoost3"></aleph-upgrade>
+
 </div>
 </div>`
 });
